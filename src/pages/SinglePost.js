@@ -1,22 +1,25 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './pages.css';
-import { Link, useInRouterContext } from 'react-router-dom';
+import { Link, useInRouterContext, useParams } from 'react-router-dom';
 import AppContext from '../context/AppContext'
 import App from '../App';
-import AllPosts from '../components/AllPosts';
+import PostByID from '../components/SinglePost';
+
 // import {formatPostData} from '../components/AllPosts'; 
 
 export default function Posts () {
     //Constants
+    const {id} = useParams(); 
     const BASE_URL = "http://localhost:8080"
 
-    const [allPosts, setAllPosts] = useState([]);
+    const [singlePost, setSinglePost] = useState([]);
 
     const fetchData = () => {
-        fetch(`${BASE_URL}/posts`)
+        fetch(`${BASE_URL}/posts/${id}`)
           .then((response) => response.json())
           .then((data) => {
-            setAllPosts(data);
+            setSinglePost(data);
+            console.log(data)
           })
         //   .then(formatPostData)
           .catch((error) => {
@@ -26,7 +29,7 @@ export default function Posts () {
       useEffect(() => {
         fetchData();
       }, []);
-      console.log('all posts', allPosts)
+      console.log('single posts', singlePost)
 
 
     return(
@@ -34,8 +37,7 @@ export default function Posts () {
         <div className='title'>
             <ul>
             </ul>
-            <h2> Town Square </h2>
-                {allPosts && <AllPosts data = {allPosts} />}
+                {singlePost && <PostByID data = {singlePost} />}
 
         </div>
         

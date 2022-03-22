@@ -2,6 +2,9 @@ import React from 'react';
 // import { useContext } from 'react';
 import './pages.css';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Login from './Login.js';
+
     
 export default function Register (){
     const [username, setUsername] = useState("")
@@ -56,8 +59,9 @@ export default function Register (){
                         <input for="lastName" type="text"
                         onChange={(e) => setLast_name((e.target.value))}/>
                     </p>
-
+                    <Link to="/login" element={<Login />}>
                     <button type="submit" className = "submitBtn">Create Account</button>
+                    </Link>
                 </form>
         </div> 
         ) 

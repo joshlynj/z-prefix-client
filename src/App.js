@@ -3,7 +3,7 @@ import './App.css';
 
 import React from 'react';
 import {useState, useEffect} from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Router, Switch } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
 
@@ -13,13 +13,51 @@ import Home from './pages/Home.js';
 import Login from './pages/Login.js';
 import Register from './pages/Register.js';
 import Posts from './pages/Posts.js';
+import SinglePost from './pages/SinglePost';
+import Create from './pages/Create.js'; 
 
 
 
 //Component imports
 import Navbar from './components/Navbar.js';
+import AllPosts from './components/AllPosts';
 
 function App() {
+
+  return (
+    <>
+      <main>
+        {/* <AppContext.Provider value = {ContextObj}> */}
+        <Navbar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/login' element={ <Login />} />
+            <Route path='/posts' element={<Posts />} />
+            <Route path='/create' element={<Create />} />
+            <Route path='/posts/:id' element={<SinglePost/>} />
+            {/* <Route path='/posts/id' element={<AboutMe />} />
+            <Route path='/my-builds' element={<Build />} />
+            <Route path='/order-form/' element={<OrderForm />} />
+            <Route path='/order-form/1' element={<OrderType1/>} />
+            <Route path='/order-form/2' element={<OrderType2/>} />
+            <Route path='/order-form/3' element={<OrderType3/>} />
+            <Route path='/order-form/4' element={<OrderType4/>} />
+            <Route path='/order-form/5' element={<OrderType5/>} />
+            <Route path='/order-form/6' element={<OrderCustom/>} /> */}
+          </Routes>
+          {/* </AppContext.Provider> */}
+        </main>
+      </>
+  
+  
+    );
+}
+
+export default App;
+
+
+// was under function App
   // //Constants
   //   //Constants
   //   const BASE_URL ={
@@ -95,33 +133,3 @@ function App() {
   //   setUseName,
   //   signup,
   // }
-
-  return (
-    <>
-      <main>
-        {/* <AppContext.Provider value = {ContextObj}> */}
-        <Navbar />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/login' element={ <Login />} />
-            <Route path='/posts' element={<Posts />} />
-            {/* <Route path='/posts/id' element={<AboutMe />} />
-            <Route path='/my-builds' element={<Build />} />
-            <Route path='/order-form/' element={<OrderForm />} />
-            <Route path='/order-form/1' element={<OrderType1/>} />
-            <Route path='/order-form/2' element={<OrderType2/>} />
-            <Route path='/order-form/3' element={<OrderType3/>} />
-            <Route path='/order-form/4' element={<OrderType4/>} />
-            <Route path='/order-form/5' element={<OrderType5/>} />
-            <Route path='/order-form/6' element={<OrderCustom/>} /> */}
-          </Routes>
-          {/* </AppContext.Provider> */}
-        </main>
-      </>
-  
-  
-    );
-}
-
-export default App;
