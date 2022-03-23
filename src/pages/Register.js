@@ -23,6 +23,7 @@ export default function Register (){
               'Accept': 'application/json'
              },
             method: "POST",
+            mode: "cors",
             body: JSON.stringify({
               username: username,
               password: password,

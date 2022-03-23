@@ -13,7 +13,7 @@ export default function Posts () {
     const [allPosts, setAllPosts] = useState([]);
 
     const fetchData = () => {
-        fetch(`${BASE_URL}/posts/`)
+        fetch(`${BASE_URL}/posts/`, {mode: "cors"})
           .then((response) => response.json())
           .then((data) => {
             setAllPosts(data);
