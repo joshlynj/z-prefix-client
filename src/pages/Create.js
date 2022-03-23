@@ -22,7 +22,7 @@ export default function Register (){
         e.preventDefault();
             //might need to change the link for fetch
             //https://z-prefix-api.herokuapp.com/users
-          fetch('https://z-prefix-api.herokuapp.com/posts', {
+          fetch('https://z-prefix-api.herokuapp.com/posts/', {
             headers : { 
               'Content-Type': 'application/json',
               'Accept': 'application/json'
