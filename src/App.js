@@ -41,6 +41,7 @@ function App() {
   }, []); 
 
   console.log('usertoken logon', userToken)
+  console.log('all posts', allPosts)
 
   function logon(credentials) {
 
@@ -80,7 +81,7 @@ function App() {
             <Route path='/posts' element={<Posts />} />
             <Route path='/create' element={<Create />} />
             <Route path='/posts/:id' element={<SinglePost/>} />
-            <Route path='/mypage' element={<MyPage/>} />
+            <Route path='/mypage/:id' element={<MyPage/>} />
           </Routes>
           </AppContext.Provider>
         </main>

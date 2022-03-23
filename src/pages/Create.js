@@ -13,6 +13,7 @@ export default function Register (){
     const [user_id, setUser_Id] = useState()
 
     let {userToken} = useContext(AppContext);
+    let navigate = useNavigate(); 
     // userToken = user_id; 
     console.log('userToken on create', userToken)
     let handleSubmit = (e) => {
@@ -35,6 +36,9 @@ export default function Register (){
           })
           .then((res) => res.json())
           .catch((err) => console.log(err, 'error from fetch'))
+          setTimeout(function() {
+              return navigate(`/mypage/${userToken}`);
+              }, 1500);
         }
 
         return(

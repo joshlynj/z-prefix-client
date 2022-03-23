@@ -30,6 +30,7 @@ export default function Posts () {
         fetchData();
       }, []);
       console.log('single posts', singlePost)
+      
 
 
     return(

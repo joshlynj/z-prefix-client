@@ -22,7 +22,7 @@ export default function Loginpage({ setToken }) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
   
-    let {logon} = useContext(AppContext);
+    let {logon, userToken} = useContext(AppContext);
     let navigate = useNavigate();
   
     const handleSubmit = async e => {
@@ -32,7 +32,7 @@ export default function Loginpage({ setToken }) {
         password
       });
       setTimeout(function() {
-      return navigate('/mypage');
+    //   return navigate(`/mypage/${userToken}`);
       }, 1500);
       setUserName(username); 
     }

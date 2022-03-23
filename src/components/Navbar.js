@@ -39,6 +39,11 @@ function Navbar() {
                         Posts
                     </Link>
                 </li>
+                <li className='nav-item'>
+                    <Link to='/Create' className='nav-links' onClick={closeMobileMenu}>
+                        Create
+                    </Link>
+                </li>
 
                 <li>
                     <Link to='/login'
