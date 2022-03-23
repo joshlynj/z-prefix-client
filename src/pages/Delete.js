@@ -47,14 +47,7 @@ export default function Register (){
         <div className="forms">
             <h1>Are you sure you want to delete your post?</h1>
                 <form className='create-form' onSubmit={handleSubmit}>
-                    {/* <p>
-                    <label for="user_id">ID:</label>
-                      <input type="hidden" value={userToken} 
-                      onChange={(e) => setContent((e.target.value))}/>
-                    </p> */}
-                    {/* <Link to="/mypage" element={<MyPage />}> */}
                     <button type="submit" className = "submitBtn">Delete</button>
-                    {/* </Link> */}
                 </form>
         </div> 
         ) 

@@ -14,7 +14,7 @@ export default function MyPage (){
  
     let { userToken} = useContext(AppContext);
 
-
+    
     // let postid = userToken[0]
     // let userPost = allPosts.filter(data => data.userid === postid.id )
     //Constants

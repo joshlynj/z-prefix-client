@@ -22,7 +22,7 @@ const AllPosts = ({ data }) => {
         {data && data.map((item, index) => 
         <div className = 'individualPost' key={index}>
             <div className='postTitle'> {item.title}  </div>
-            <div className='content'> {item.content.substring(0,100)} </div>
+            <div className='content'> {item.content.length < 100 ? item.content:item.content.substring(0,100)+'...'} </div>
             <div className='date'>Date created: {item.created_at.substring(0,10)}</div>
             <Link to = {`/Posts/${item.id}`}element={<AllPosts/>}>
                 <button type="button" className = "submitBtn"> Read More</button>
