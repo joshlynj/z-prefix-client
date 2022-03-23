@@ -19,7 +19,7 @@ export default function MyPage (){
     // let userPost = allPosts.filter(data => data.userid === postid.id )
     //Constants
     const {user_id} = useParams();
-    const BASE_URL = "http://localhost:8080"
+    const BASE_URL = "https://z-prefix-api.herokuapp.com/"
 
     const [myPost, setMyPost] = useState([]);
     

@@ -17,7 +17,7 @@ export default function Register (){
         
         e.preventDefault();
         
-          fetch('http://localhost:8080/users', {
+          fetch('https://z-prefix-api.herokuapp.com/users', {
             headers : { 
               'Content-Type': 'application/json',
               'Accept': 'application/json'

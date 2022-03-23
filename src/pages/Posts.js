@@ -8,7 +8,7 @@ import AllPosts from '../components/AllPosts';
 
 export default function Posts () {
     //Constants
-    const BASE_URL = "http://localhost:8080"
+    const BASE_URL = "https://z-prefix-api.herokuapp.com/"
 
     const [allPosts, setAllPosts] = useState([]);
 

@@ -23,7 +23,7 @@ import MyPage from './pages/MyPage.js';
 import Delete from './pages/Delete.js';
 
   //Constants
-  const BASE_URL = "http://localhost:8080"
+  const BASE_URL = "https://z-prefix-api.herokuapp.com/"
 
 
 
