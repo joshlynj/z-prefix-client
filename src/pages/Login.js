@@ -32,7 +32,7 @@ export default function Loginpage({ setToken }) {
         password
       });
       setTimeout(function() {
-    //   return navigate(`/mypage/${userToken}`);
+      return navigate(`/mypage/${userToken}`);
       }, 1500);
       setUserName(username); 
     }

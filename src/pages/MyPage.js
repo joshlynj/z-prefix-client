@@ -41,17 +41,15 @@ export default function MyPage (){
 
 
     return(
-        <div> 
+        <div classname='myPage'> 
             
             <h1>Your Posts</h1>
-            {myPost && <MyPost data = {myPost} />}
-
-        <Link to="/create" element={<Create />}>
-            <button type="submit" className = "submitBtn">Create Post</button>
-        </Link>
-
-        <button type="submit" className = "submitBtn">Edit Post</button>
-        <button type="submit" className = "submitBtn">Delete Post</button>
+            <div className = 'createPostBtn'>
+                <Link to="/create" element={<Create />}>
+                    <button type="submit" className = "submitBtn">Create Post</button>
+                </Link>
+             </div>
+                {myPost && <MyPost data = {myPost} />}
         </div>
     )
 };

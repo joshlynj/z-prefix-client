@@ -6,6 +6,15 @@ import { render } from 'react-dom';
 
 
 const AllPosts = ({ data }) => {
+
+  
+  // const ToggleButton = () => {
+  //   const [editState, setEditState] = useState(false);
+  //   const toggleEditState = () => {
+  //       setEditState(!editState)
+  //   }
+// }
+
   return (
 
     <div classname = 'allPosts'>

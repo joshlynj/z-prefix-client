@@ -20,6 +20,7 @@ import Posts from './pages/Posts.js';
 import SinglePost from './pages/SinglePost';
 import Create from './pages/Create.js'; 
 import MyPage from './pages/MyPage.js'; 
+import Delete from './pages/Delete.js';
 
   //Constants
   const BASE_URL = "http://localhost:8080"
@@ -62,6 +63,8 @@ function App() {
   }
 
 
+
+
   let contextObj = {
     logon,
     setUseName,
@@ -82,6 +85,8 @@ function App() {
             <Route path='/create' element={<Create />} />
             <Route path='/posts/:id' element={<SinglePost/>} />
             <Route path='/mypage/:id' element={<MyPage/>} />
+            <Route path='/delete/:id' element={<Delete />} />
+
           </Routes>
           </AppContext.Provider>
         </main>

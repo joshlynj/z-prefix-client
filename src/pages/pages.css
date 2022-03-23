@@ -16,6 +16,65 @@
   padding: 0;
 }
 
+.submitBtn {
+  width: 200px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: #1c89ff;
+  border: solid 1px transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+  }
+
+  .submitBtn:hover{
+    background-color: darkblue;
+    border-color: #fff;
+    transition: all .1s ease-in-out;
+  }
+
+.myPage{
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  height: 75vh;
+  margin: 2% auto;
+  box-shadow: 0 0 15px 2px gray;
+  font-size: 2vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.createPostBtn{
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+}
+
+.deleteBtn{
+  width: 200px;
+  height: 36px;
+  border-radius: 18px;
+  background-color:red;
+  border: solid 1px transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+
+}
+.deleteBtn:hover{
+  background-color: darkred;
+  border-color: #fff;
+  transition: all .1s ease-in-out;
+}
 .overall-home {
   height: 100%;
   width: 100%;
@@ -37,39 +96,6 @@
   color: white;
   margin: 0;
   padding: 0;
-}
-
-
-
-
-.about-me { 
-  display: flex;
-  justify-content: center;
-  width: 90vw;
-  height: 75vh;
-  margin: 2% auto;
-  box-shadow: 0 0 15px 2px gray;
-  font-size: 2vh;
-  font-family: 'Roboto', sans-serif;
-}
-
-.owner{
-  display: flex; 
-  flex-direction: column;
-  align-items: center;
-  width: 40vw;
-  height: 80%;
-  margin-top:1%;
-}
-
-.owner img{
-  height: 100%;
-  width: 100%;
-  max-width: 400px;
-}
-
-.owner h2 {
-  margin-bottom: 0;
 }
 
 .description{
@@ -131,24 +157,7 @@
   align-items: center;
 }
  
-.submitBtn {
-  width: 200px;
-  height: 36px;
-  border-radius: 18px;
-  background-color: #1c89ff;
-  border: solid 1px transparent;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 300;
-  cursor: pointer;
-  transition: all .1s ease-in-out;
-  }
 
-  .submitBtn:hover{
-    background-color: darkblue;
-    border-color: #fff;
-    transition: all .1s ease-in-out;
-  }
 
 .login-form {
   padding: 50px 50px;
@@ -218,6 +227,17 @@
   margin: 2% 0;
   box-shadow: 0 0 15px 2px gray
 }
+
+.myPost{
+  background-color: rgb(255, 255, 255);
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2% 0;
+  box-shadow: 0 0 15px 2px gray
+}
+
 
 .postTitle {
   display: flex;
