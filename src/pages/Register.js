@@ -17,7 +17,7 @@ export default function Register (){
         
         e.preventDefault();
         
-          fetch('https://z-prefix-api.herokuapp.com/users/', {
+          fetch('https://z-prefix-api.herokuapp.com/users', {
             headers : { 
               'Content-Type': 'application/json',
               'Accept': 'application/json'
