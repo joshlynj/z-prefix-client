@@ -31,8 +31,17 @@ function App() {
   //states
   const [userToken, setUserToken] = useState(0);
   const [useName, setUseName] = useState('');
+  const [allPosts, setAllPosts] = useState('');
 
-  
+  useEffect(() => { 
+    fetch (`${BASE_URL}/posts`)
+      .then((res) => res.json())
+      .then((data) => setAllPosts(data))
+      .catch((err) => console.log(err));
+  }, []); 
+
+  console.log('usertoken logon', userToken)
+
   function logon(credentials) {
 
     fetch(`${BASE_URL}/users/login`, {
@@ -44,14 +53,19 @@ function App() {
 
     })
       .then(response => response.json())
-      .then(userToken => setUserToken(userToken))
-      .catch(err => console.log(err))
+      //.then(data => setUserToken(data))
+      .then(data => setUserToken(data))
+      .catch(err => console.log(err));
+      
+      // console.log('data', (data))
   }
 
 
   let contextObj = {
     logon,
-    setUseName
+    setUseName,
+    userToken, 
+    setAllPosts
   }
 
   return (

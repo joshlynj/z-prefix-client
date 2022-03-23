@@ -2,12 +2,19 @@ import React from 'react';
 // import { useContext } from 'react';
 import './pages.css';
 import { useState } from 'react';
-    
+import AppContext from '../context/AppContext';
+import {useContext} from "react";
+import MyPage from './MyPage';
+import { Link, useNavigate } from 'react-router-dom';
+
 export default function Register (){
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [user_id, setUser_Id] = useState()
 
+    let {userToken} = useContext(AppContext);
+    // userToken = user_id; 
+    console.log('userToken on create', userToken)
     let handleSubmit = (e) => {
 
         
@@ -23,7 +30,7 @@ export default function Register (){
             body: JSON.stringify({
               title: title,
               content: content,
-              user_id: user_id
+              user_id: userToken,
             }),
           })
           .then((res) => res.json())
@@ -44,13 +51,15 @@ export default function Register (){
                         <input type="content"
                         onChange={(e) => setContent((e.target.value))}/>
                     </p>
-                    <p>
-                        <label for="user_id">User ID:</label>
-                        <input type="text"
-                        onChange={(e) => setUser_Id((e.target.value))}/>
-                    </p>
 
-                    <button type="submit" className = "submitBtn">Create New Blog Post</button>
+                    {/* <p>
+                    <label for="user_id">ID:</label>
+                      <input type="hidden" value={userToken} 
+                      onChange={(e) => setContent((e.target.value))}/>
+                    </p> */}
+                    {/* <Link to="/mypage" element={<MyPage />}> */}
+                    <button type="submit" className = "submitBtn">Publish Post</button>
+                    {/* </Link> */}
                 </form>
         </div> 
         ) 
