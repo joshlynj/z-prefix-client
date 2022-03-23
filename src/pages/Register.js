@@ -16,8 +16,7 @@ export default function Register (){
 
         
         e.preventDefault();
-            //might need to change the link for fetch
-            //https://z-prefix-api.herokuapp.com/users
+        
           fetch('http://localhost:8080/users', {
             headers : { 
               'Content-Type': 'application/json',
@@ -33,6 +32,7 @@ export default function Register (){
           })
           .then((res) => res.json())
           .catch((err) => console.log(err, 'error from fetch'))
+          .then(alert("Account registered!"))
         }
 
         return(
@@ -59,11 +59,17 @@ export default function Register (){
                         <input for="lastName" type="text"
                         onChange={(e) => setLast_name((e.target.value))}/>
                     </p>
-                    <Link to="/login" element={<Login />}>
+                    {/* <Link to="/login" element={<Login />}> */}
                     <button type="submit" className = "submitBtn">Create Account</button>
-                    </Link>
+                    {/* </Link> */}
                 </form>
         </div> 
         ) 
 
     };
+
+
+
+
+    //might need to change the link for fetch
+            //https://z-prefix-api.herokuapp.com/users

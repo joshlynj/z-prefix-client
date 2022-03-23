@@ -1,9 +1,13 @@
 //Style
 import './App.css';
+//Component imports
+import Navbar from './components/Navbar.js';
+import AllPosts from './components/AllPosts';
 
 import React from 'react';
-import {useState, useEffect} from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route, Router, Switch } from 'react-router-dom';
+import AppContext from './context/AppContext';
 // import { Link } from 'react-router-dom';
 
 
@@ -15,19 +19,45 @@ import Register from './pages/Register.js';
 import Posts from './pages/Posts.js';
 import SinglePost from './pages/SinglePost';
 import Create from './pages/Create.js'; 
+import MyPage from './pages/MyPage.js'; 
+
+  //Constants
+  const BASE_URL = "http://localhost:8080"
 
 
-
-//Component imports
-import Navbar from './components/Navbar.js';
-import AllPosts from './components/AllPosts';
 
 function App() {
+
+  //states
+  const [userToken, setUserToken] = useState(0);
+  const [useName, setUseName] = useState('');
+
+  
+  function logon(credentials) {
+
+    fetch(`${BASE_URL}/users/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials),
+
+    })
+      .then(response => response.json())
+      .then(userToken => setUserToken(userToken))
+      .catch(err => console.log(err))
+  }
+
+
+  let contextObj = {
+    logon,
+    setUseName
+  }
 
   return (
     <>
       <main>
-        {/* <AppContext.Provider value = {ContextObj}> */}
+        <AppContext.Provider value = {contextObj}>
         <Navbar />
           <Routes>
             <Route path='/' element={<Home />} />
@@ -36,17 +66,9 @@ function App() {
             <Route path='/posts' element={<Posts />} />
             <Route path='/create' element={<Create />} />
             <Route path='/posts/:id' element={<SinglePost/>} />
-            {/* <Route path='/posts/id' element={<AboutMe />} />
-            <Route path='/my-builds' element={<Build />} />
-            <Route path='/order-form/' element={<OrderForm />} />
-            <Route path='/order-form/1' element={<OrderType1/>} />
-            <Route path='/order-form/2' element={<OrderType2/>} />
-            <Route path='/order-form/3' element={<OrderType3/>} />
-            <Route path='/order-form/4' element={<OrderType4/>} />
-            <Route path='/order-form/5' element={<OrderType5/>} />
-            <Route path='/order-form/6' element={<OrderCustom/>} /> */}
+            <Route path='/mypage' element={<MyPage/>} />
           </Routes>
-          {/* </AppContext.Provider> */}
+          </AppContext.Provider>
         </main>
       </>
   
