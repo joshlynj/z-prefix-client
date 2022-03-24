@@ -24,7 +24,7 @@ export default function MyPage (){
     const [myPost, setMyPost] = useState([]);
     
     const fetchData = () => {
-        fetch(`${BASE_URL}/posts/users/${userToken}`)
+        fetch(`${BASE_URL}/posts/users/${userToken}`, {mode: "cors"})
           .then((response) => response.json())
           .then((data) => {
             setMyPost(data);

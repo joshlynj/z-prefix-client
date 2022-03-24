@@ -6,6 +6,10 @@ import { render } from 'react-dom';
 
 
 const singlePost = ({ data }) => {
+
+  //if editTrue && token  data.user_id 
+  //code w/ textareas or a form
+  //else
   return (
 
     <div className = 'singlePost'>
@@ -19,5 +23,8 @@ const singlePost = ({ data }) => {
       </ul>
     </div>
   );
+
+  
+  //return same stuff as textareas to edit
 };
 export default singlePost;

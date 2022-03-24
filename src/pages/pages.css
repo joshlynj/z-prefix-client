@@ -16,6 +16,10 @@
   padding: 0;
 }
 
+.login-wrapper{
+  
+}
+
 .submitBtn {
   width: 200px;
   height: 36px;
@@ -81,11 +85,7 @@ h1{
   margin: 0;
   padding: 0;
 }
-/* 
-.head-text {
-  position: relative;
-  text-align: center;
-} */
+
 
 .text-on-background {
   position: absolute;
@@ -124,9 +124,6 @@ h1{
   font-family: 'Roboto', sans-serif;
 }
 
-.forms button{
-
-}
 
 .order-form {
   padding: 50px 50px;
@@ -136,17 +133,6 @@ h1{
   flex-direction: column;
   align-items: center;
 }
-
-/* #submit {
-  color: #fff;
-  font-size: 0;
-  width: 135px;
-  height: 60px;
-  border: none;
-  margin: 0;
-  padding: 0;
-  background: #0c0 url(image) 0 0 no-repeat; 
- } */
 
 .register-form {
   padding: 50px 50px;
@@ -168,30 +154,6 @@ h1{
   align-items: center;
 }
 
-
-.services-page{
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-}
-
-.services-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.service-item{
-  padding: 0 10px;
-  box-shadow: 0 0 15px 2px gray;
-  width:350px;
-  height: 500px;
-  margin-bottom: 20px;
-}
-
-.service-item img {
-  width: 300px;
-  height: 300px;
-}
 
 
 .content{
@@ -263,16 +225,3 @@ h1{
 .title{
   margin-bottom: 0;
 }
-
-.before-and-after-img {
-  display: flex;
-  justify-content: space-around;
-  width: 95%;
-  padding-top:2%;
-}
-
-.before-and-after-img img {
-  width: 47.5%;
-  /* height: 85%; */
-}
-

@@ -5,9 +5,10 @@ import { useState } from 'react';
 import AppContext from '../context/AppContext';
 import {useContext} from "react";
 import MyPage from './MyPage';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 export default function Register (){
+    const {id} = useParams(); 
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [user_id, setUser_Id] = useState()
@@ -16,18 +17,17 @@ export default function Register (){
     let navigate = useNavigate(); 
     // userToken = user_id; 
     console.log('userToken on create', userToken)
-    let handleSubmit = (e) => {
-
-        
+    let handleEdit = (e) => {
+    
         e.preventDefault();
             //might need to change the link for fetch
             //https://z-prefix-api.herokuapp.com/users
-          fetch('https://z-prefix-api.herokuapp.com/posts/', {
+          fetch(`https://z-prefix-api.herokuapp.com/posts/${id}/ `, {
             headers : { 
               'Content-Type': 'application/json',
               'Accept': 'application/json'
              },
-            method: "POST",
+            method: "PATCH",
             mode: "cors",
             body: JSON.stringify({
               title: title,
@@ -41,11 +41,13 @@ export default function Register (){
               return navigate(`/mypage/${userToken}`);
               }, 1500);
         }
-
+        let contextObj = {
+            handleEdit
+        }
         return(
-        <div className="forms">
-            <h1>Make a Blog Post</h1>
-                <form className='create-form' onSubmit={handleSubmit}>
+            <div className="forms">
+            <h1>Edit Your Blog Post</h1>
+                <form className='create-form' onSubmit={handleEdit}>
                     <p>
                         <label for="title">Title:</label>
                         <input type="text"

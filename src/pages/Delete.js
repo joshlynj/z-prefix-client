@@ -30,6 +30,7 @@ export default function Register (){
               'Accept': 'application/json'
              },
             method: "DELETE",
+            mode: "cors",
             body: JSON.stringify({
               title: title,
               content: content,

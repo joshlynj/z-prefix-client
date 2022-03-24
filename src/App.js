@@ -21,6 +21,7 @@ import SinglePost from './pages/SinglePost';
 import Create from './pages/Create.js'; 
 import MyPage from './pages/MyPage.js'; 
 import Delete from './pages/Delete.js';
+import Edit from './pages/Edit';
 
   //Constants
   const BASE_URL = "https://z-prefix-api.herokuapp.com"
@@ -48,6 +49,7 @@ function App() {
 
     fetch(`${BASE_URL}/users/login`, {
       method: 'POST',
+      mode: "cors",
       headers: {
         'Content-Type': 'application/json'
       },
@@ -86,7 +88,7 @@ function App() {
             <Route path='/posts/:id' element={<SinglePost/>} />
             <Route path='/mypage/:id' element={<MyPage/>} />
             <Route path='/delete/:id' element={<Delete />} />
-
+            <Route path='/edit/:id' element={<Edit />} />
           </Routes>
           </AppContext.Provider>
         </main>
@@ -98,80 +100,3 @@ function App() {
 
 export default App;
 
-
-// was under function App
-  // //Constants
-  //   //Constants
-  //   const BASE_URL ={
-  //     development: "http://localhost:8080",
-  //     production: "https://z-prefix-api.herokuapp.com/"
-  //   } 
-  
-  //   fetch(BASE_URL)
-  // const [state, setState] = useState(false)
-  // const [userToken, setUserToken] = useState(0);
-  // const [postState, setPostState] = useState({});
-  // const [allPosts, setAllPosts] = useState([]);
-  // const [useName, setUseName] = useState('');
-  // const [userID, setUserID] = useState(0);
-
-
-  // useEffect(() => {
-  //   fetch(`${BASE_URL}/posts`)
-  //     .then(response => response.json())
-  //     .then(posts => setAllPosts([posts]))
-  //     .catch(err => console.log(err))
-
-  //   // fetch(`${BASE_URL}/candy`)
-  //   //   .then(response => response.json())
-  //   //   .then(candy => setCandyInfo(candy))
-  //   //   .catch(err => console.log(err))
-  // }, [])
-
-
-
-
-  // function logon(credentials) {
-
-  //   fetch(`${BASE_URL}/users/login`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(credentials),
-
-  //   })
-  //     .then(response => response.json())
-  //     .then(token => setUserToken(token))
-  //     .catch(err => console.log(err))
-  // }
-
-  // function signup(credentials) {
-  //   fetch(`${BASE_URL}/users/register`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(credentials),
-
-  //   })
-  //     .then(response => setPostState(response))
-  //     .then(token => setUserToken(token))
-  //     .catch(err => console.log(err))
-  // }
-
-
-
-  // function logout() {
-  //   setUserToken(0);
-  // }
-
-
-  // let contextObj = {
-  //   logon,
-  //   logout,
-  //   setPostState,
-  //   allPosts,
-  //   setUseName,
-  //   signup,
-  // }

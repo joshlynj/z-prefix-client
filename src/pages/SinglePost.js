@@ -15,7 +15,7 @@ export default function Posts () {
     const [singlePost, setSinglePost] = useState([]);
 
     const fetchData = () => {
-        fetch(`${BASE_URL}/posts/${id}`)
+        fetch(`${BASE_URL}/posts/${id}`, {mode: "cors"})
           .then((response) => response.json())
           .then((data) => {
             setSinglePost(data);
