@@ -42,7 +42,7 @@
 .myPage{
   display: flex;
   justify-content: center;
-  width: 90vw;
+  width: 80vw;
   height: 75vh;
   margin: 2% auto;
   box-shadow: 0 0 15px 2px gray;
@@ -154,6 +154,15 @@ h1{
   align-items: center;
 }
 
+.create-form {
+  padding: 50px 50px;
+  margin: 30px 0;
+  box-shadow: 0 0 15px 2px gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 
 .content{
@@ -182,7 +191,7 @@ h1{
 
 .individualPost{
   background-color: rgb(255, 255, 255);
-  width: 90vw;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -192,6 +201,23 @@ h1{
 
 .myPost{
   background-color: rgb(255, 255, 255);
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2% 0;
+  box-shadow: 0 0 15px 2px gray
+}
+
+.outsideBoundary2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.outsideBoundary {
+  background-color: rgb(255, 255, 255);
   width: 90vw;
   display: flex;
   flex-direction: column;
@@ -200,12 +226,27 @@ h1{
   box-shadow: 0 0 15px 2px gray
 }
 
+/* .content-forms{
+  width: 550px;
+ height: 450px;
+ margin: auto;
+ align-items: center;
+}
+ */
+
+.content-label{
+  display:flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .postTitle {
   display: flex;
+  width: 70vw; 
   flex-direction: column;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 1.8em;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -218,8 +259,6 @@ h1{
   margin: 2% 0;
   box-shadow: 0 0 15px 2px gray;
 }
-
-
 
 
 .title{

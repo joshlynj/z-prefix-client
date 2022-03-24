@@ -54,10 +54,13 @@ export default function Register (){
                         onChange={(e) => setTitle((e.target.value))}/>
                     </p>
                     <p>
-                        <label for="content">Content:</label>
-                        <input type="content"
-                        onChange={(e) => setContent((e.target.value))}/>
+                        <span className="content-label"><label for="content">Content:</label></span>
+                                <span>
+                                    <textarea name="name" cols="40" rows="5" onChange={(e) => setContent((e.target.value))}></textarea>
+                
+                        </span>
                     </p>
+            
                     <button type="submit" className = "submitBtn">Publish Post</button>
                 </form>
         </div> 

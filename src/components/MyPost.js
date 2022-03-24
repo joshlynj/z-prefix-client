@@ -58,8 +58,9 @@ const MyPost = ({data}) => {
 
 
   return (
-
-    <div className = 'myPost'>
+    
+    <div className = 'outsideBoundary2'>
+    <div className = 'outsideBoundary'>
       <ul>
         {data && data.map((item, index) => 
         <div className = 'myPost' key={index}>
@@ -116,6 +117,7 @@ const MyPost = ({data}) => {
             </span>
         </div>)}    
       </ul>
+    </div>
     </div>
   );
 } 

@@ -47,15 +47,21 @@ export default function Register (){
             <h1>Make a Blog Post</h1>
                 <form className='create-form' onSubmit={handleSubmit}>
                     <p>
-                        <label for="title">Title:</label>
-                        <input type="text"
-                        onChange={(e) => setTitle((e.target.value))}/>
+                        <span><label for="title">Title:</label></span>
+                        <span><input type="text"
+                        onChange={(e) => setTitle((e.target.value))}/></span>
                     </p>
-                    <p>
-                        <label for="content">Content:</label>
-                        <input type="content"
-                        onChange={(e) => setContent((e.target.value))}/>
-                    </p>
+                    <div className="content-forms">
+                        <p>
+                            <span className="content-label"><label for="content">Content:</label></span>
+                            <span>
+                                <textarea name="name" cols="40" rows="5" onChange={(e) => setContent((e.target.value))}></textarea>
+                                
+                                {/* <input type="content"
+                            onChange={(e) => setContent((e.target.value))}/> */}
+                            </span>
+                        </p>
+                    </div> 
                     <button type="submit" className = "submitBtn">Publish Post</button>
                 </form>
         </div> 
